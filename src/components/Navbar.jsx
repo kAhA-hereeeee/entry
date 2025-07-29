@@ -18,13 +18,9 @@ import { Link } from 'react-router-dom'
             </tr>
           </thead>
           <tbody>
-
-            {/* Order 1 */}
             <tr className="border-b">
               <td className="p-2 flex items-center gap-3">
-                {/* Аватар клиента */}
                 <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА АВАТАР Donald Rodriguez */}
                 </div>
                 <div>
                   <div className="font-medium">Donald Rodriquez</div>
@@ -32,9 +28,7 @@ import { Link } from 'react-router-dom'
                 </div>
               </td>
               <td className="p-2 flex items-center gap-3">
-                {/* Фото товара */}
                 <div className="w-10 h-10 rounded bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА ИЗОБРАЖЕНИЕ футболки */}
                 </div>
                 <div>
                   <div>Oversized Cotton T-shirt</div>
@@ -53,12 +47,9 @@ import { Link } from 'react-router-dom'
                 <span className="bg-blue-500 text-white px-3 py-1 rounded text-xs">Completed</span>
               </td>
             </tr>
-
-            {/* Order 2 */}
             <tr className="border-b">
               <td className="p-2 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА АВАТАР Frank Williams */}
                 </div>
                 <div>
                   <div className="font-medium">Frank Williams</div>
@@ -67,7 +58,6 @@ import { Link } from 'react-router-dom'
               </td>
               <td className="p-2 flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА ИЗОБРАЖЕНИЕ кроссовок */}
                 </div>
                 <div>
                   <div>High-Top Leather Sneakers</div>
@@ -86,12 +76,9 @@ import { Link } from 'react-router-dom'
                 <span className="bg-yellow-500 text-white px-3 py-1 rounded text-xs">On the Way</span>
               </td>
             </tr>
-
-            {/* Order 3 */}
             <tr className="border-b">
               <td className="p-2 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА АВАТАР Matthew Brooks */}
                 </div>
                 <div>
                   <div className="font-medium">Matthew Brooks</div>
@@ -100,7 +87,6 @@ import { Link } from 'react-router-dom'
               </td>
               <td className="p-2 flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА ИЗОБРАЖЕНИЕ худи */}
                 </div>
                 <div>
                   <div>Cozy Fleece Hoodie with Front Pocket</div>
@@ -119,12 +105,9 @@ import { Link } from 'react-router-dom'
                 <span className="bg-yellow-500 text-white px-3 py-1 rounded text-xs">On the Way</span>
               </td>
             </tr>
-
-            {/* Order 4 */}
             <tr>
               <td className="p-2 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА АВАТАР Gary Smith */}
                 </div>
                 <div>
                   <div className="font-medium">Gary Smith</div>
@@ -133,7 +116,6 @@ import { Link } from 'react-router-dom'
               </td>
               <td className="p-2 flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-gray-200 overflow-hidden">
-                  {/* ВСТАВЬТЕ СЮДА ИЗОБРАЖЕНИЕ бейсболки */}
                 </div>
                 <div>
                   <div>Adjustable Cotton Baseball Cap</div>
