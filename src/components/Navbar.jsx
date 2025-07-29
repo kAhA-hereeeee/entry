@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom'
           <thead>
             <tr className="border-b">
               <th className="p-2 font-medium text-gray-600">Customer Name</th>
-              <th className="p-2 font-medium text-gray-600">Product(s)</th>
               <th className="p-2 font-medium text-gray-600">Platform</th>
               <th className="p-2 font-medium text-gray-600">Total Amount</th>
               <th className="p-2 font-medium text-gray-600">Payment Method</th>
