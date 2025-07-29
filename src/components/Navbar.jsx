@@ -157,7 +157,6 @@ import { Link } from 'react-router-dom'
         </table>
       </div>
     </div>
-
     </>
   )
 }
