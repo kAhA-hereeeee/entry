@@ -7,6 +7,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Navbar from './components/Navbar'
+import { useForm } from "react-hook-form";
 
 function App() {
 
