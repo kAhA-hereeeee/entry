@@ -34,9 +34,9 @@ export default function App() {
           maxWidth: "400px",
           margin: "0 auto",
           padding: "20px",
-          border: "1px solid #ccc",
+          border: "1px solid #FFFF",
           borderRadius: "10px",
-          background: "#f9f9f9"
+          background: "#FFFF"
         }}
       >
         <input placeholder="Organization" {...register("organization")} />
