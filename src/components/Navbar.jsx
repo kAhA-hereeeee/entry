@@ -3,7 +3,9 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 export default function App() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset , formState: {errors} } = useForm({
+    mode: "onChange",
+  });
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,84 +22,40 @@ export default function App() {
       })
       .catch(err => console.log(err));
   };
+  console.log(errors)
 
   return (
-    <div style={{ padding: "30px", }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
-        Studio Rental Application
-      </h2>
-      <form 
-        onSubmit={handleSubmit(onSubmit)} 
-        style={{
-          display: "grid",
-          gap: "12px",
-          maxWidth: "400px",
-          margin: "0 auto",
-          padding: "20px",
-          border: "1px solid #FFFF",
-          borderRadius: "10px",
-          background: "#FFFF"
-        }}
-      >
-        <input placeholder="Organization" {...register("organization")} />
-        <input placeholder="First name" {...register("firstName")} />
-        <input placeholder="Last name" {...register("lastName")} />
-        <input placeholder="Email" type="email" {...register("email")} />
-        <textarea placeholder="Description" {...register("description")} />
-        <label>Start date:</label>
-        <input type="date" {...register("startDate")} />
-        <label>End date:</label>
-        <input type="date" {...register("endDate")} />
+    <>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="w-full max-w-xl bg-white rounded-lg p-6">
+        <h2 className="text-2xl font-bold text-center text-red-500">
+          Get in touch
+        </h2>
+        <p className="text-center font-bold text-red-500 mb-2">
+          love to hear from you.
+        </p>
+        <p className="text-center text-gray-600 text-sm mb-6">
+          Let's talk about your project, ideas, or anything you want to discuss. 
+          Please fill out the form below.
+        </p>
+        <form onSubmit={handleSubmit(onSubmit)} 
+        style={{ display: "grid", gap: "12px", maxWidth: "400px", margin: "0 auto", padding: "20px", border: "1px solid #FFFF", borderRadius: "10px", background: "#FFFF"
+        }} className="space-y-4">
 
-        <button 
-          type="submit" 
-          style={{
-            padding: "10px",
-            border: "none",
-            borderRadius: "5px",
-            background: "#4CAF50",
-            color: "white",
-            cursor: "pointer"
-          }}
-        >
-          Submit
+          <div className="flex justify-around gap-3">
+        <input className="w-full rounded-md border border-pink-400 px-3 py-2 text-sm" placeholder="First Name" {...register("FirstName" , {required: "Поле обязательно для заполнения",maxLength: {value: 20,message: "Максимум 20 символов"}})} />
+        <input className="w-full rounded-md border border-pink-400 px-3 py-2 text-sm" placeholder="Last Name" {...register("Lastname", {required: "Поле обязательно для заполнения",maxLength: {value: 20,message: "Максимум 20 символов"}})}/>
+          {errors.firstName && (<h1 style={{ color: "red", fontSize: "14px" }}>{errors.firstName.message}</h1>)}
+          </div>
+        <input className="w-full rounded-md border border-pink-400 px-3 py-2 text-sm" placeholder="Email*" {...register("email")} />
+        <input className="w-full rounded-md border border-pink-400 px-3 py-2 text-sm" placeholder="Phone*" type="phone" {...register("phone")} />
+        <textarea className="w-full rounded-md border border-pink-400 px-3 py-2 text-sm" placeholder="Message" {...register("description")} />
+        <button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 rounded-md">
+              Submit Now
         </button>
-      </form>
-
-      <hr style={{ margin: "30px 0" }} />
-      <h3 style={{ textAlign: "center" }}>Applications list</h3>
-      <table 
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-          marginTop: "20px"
-        }}
-      >
-        <thead style={{ background: "#eee" }}>
-          <tr>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>Organization</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>First</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>Last</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>Email</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>Description</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>Start</th>
-            <th style={{ border: "1px solid #FFFF", padding: "8px" }}>End</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(item => (
-            <tr key={item.id}>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.organization}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.firstName}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.lastName}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.email}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.description}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.startDate}</td>
-              <td style={{ border: "1px solid #ccc", padding: "8px" }}>{item.endDate}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        </form>
+      </div>
     </div>
+    </>
   );
 }
