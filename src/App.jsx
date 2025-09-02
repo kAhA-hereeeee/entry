@@ -7,13 +7,15 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Navbar from './components/Navbar'
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
+import Nutton from "./components/Nutton"
 
 function App() {
 
   return (
     <>
-    <Navbar/>
+
+    <Nutton/>
     </>
   )
 }
